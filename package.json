@@ -1,5 +1,5 @@
 {
-    "name": "infinite-grid",
+    "name": "@astral3d/infinite-grid",
     "version": "0.0.1",
     "type": "module",
     "main": "dist/index.mjs",
@@ -23,17 +23,17 @@
             "require": "./dist/index.cjs"
         }
     },
-    "homepage": "https://github.com/khrome/infinite-grid",
+    "homepage": "https://github.com/astral3d/infinite-grid",
     "description": "An abstraction for working within an continuous, infinite grid",
     "keywords": [],
     "author": "Abbey Hawk Sparrow <khrome>(http://abbeyhawksparrow.com)",
     "contributors": [],
     "repository": {
         "type": "git",
-        "url": "https://github.com/khrome/infinite-grid"
+        "url": "https://github.com/astral3d/infinite-grid"
     },
     "bugs": {
-        "url": "https://api.github.com/repos/khrome/infinite-grid/issues"
+        "url": "https://api.github.com/repos/astral3d/infinite-grid/issues"
     },
     "moka": {
         "firefox": {
