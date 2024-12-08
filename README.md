@@ -1,9 +1,39 @@
 infinite-grid
 ============================
-An abstraction for working within an continuous, infinite grid
+An abstraction for working within a continuous, infinite grid
 
 Usage
 -----
+
+```js
+import { InfiniteGrid, InfiniteGridMarker } from 'infinite-grid';
+
+const grid = new InfiniteGrid({
+    radius: 1,
+    cellSize: 16,
+    x: 5,
+    y: 5
+});
+const avatar = new InfiniteGridMarker({});
+await grid.cellsLoaded();
+grid.setAvatar(avatar, { x:0, y:0, z:0 });
+// change the position of the avatar to be outside the cell
+avatar.position.x = 17;
+avatar.position.y = 17;
+// check if there is a transition in the current state
+const transition = grid.checkForTransition();
+// if so, recenter
+if(transition){
+    grid.offset.x += transition.x;
+    grid.offset.y += transition.y;
+}
+// rearrange the submeshes for the new center
+grid.transitionCells();
+//fill in any missing submeshes once complete
+grid.loadEmptyCells();
+//wait for the filled submeshes load to be complete
+await grid.cellsLoaded();
+```
 
 Testing
 -------
